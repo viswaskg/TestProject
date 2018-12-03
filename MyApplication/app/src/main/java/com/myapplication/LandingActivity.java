@@ -6,13 +6,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.myapplication.adapters.MediaAdapter;
 import com.myapplication.callbacks.MediaSelectedCallBack;
 import com.myapplication.database.models.MediaList;
-import com.myapplication.view.LandingContract;
 import com.myapplication.presenter.LandingPresenterImpl;
+import com.myapplication.view.LandingContract;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +38,6 @@ public class LandingActivity extends BaseActivity implements MediaSelectedCallBa
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // UI references.
-        TextView mUserName = (TextView) findViewById(R.id.tv_user);
-        mUserName.setText("Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         mAdapter = new MediaAdapter(mediaLists, this);

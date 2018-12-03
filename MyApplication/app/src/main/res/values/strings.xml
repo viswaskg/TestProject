@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
 
-    <string name="login">Login</string>L
+    <string name="sign_in">Sign In</string>
+    <string name="google">Google</string>
+    <string name="login">Login</string>
     <string name="hint_email">Enter e-mail address</string>
     <string name="hint_password">Enter password</string>
     <string name="logout">Logout</string>

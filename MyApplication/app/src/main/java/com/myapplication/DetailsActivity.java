@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import com.google.android.exoplayer2.*;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
@@ -31,6 +33,7 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Det
 
     DetailsPresenterImpl presenter;
     TextView tvTitle, tvDescription;
+    Button btnPlay;
     PlayerView playerView;
     SimpleExoPlayer player;
     RecyclerView recyclerView;
@@ -56,6 +59,7 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Det
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // UI references.
+        btnPlay = findViewById(R.id.btn_play);
         tvTitle = findViewById(R.id.tv_title);
         tvDescription = findViewById(R.id.tv_desc);
         playerView = findViewById(R.id.video_view);
@@ -67,8 +71,8 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Det
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        if (!presenter.doDBDataStatus(this))
-            presenter.doFetchMediaLists(this);
+        if (!presenter.doDBDataStatus(DetailsActivity.this))
+            presenter.doFetchMediaLists(DetailsActivity.this);
     }
 
     @Override
@@ -96,11 +100,20 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Det
     }
 
     @Override
-    public void onDetailsFetched(MediaList mediaList) {
+    public void onDetailsFetched(final MediaList mediaList) {
         tvTitle.setText(mediaList.getTitle());
         tvDescription.setText(mediaList.getDescription());
-        presenter.doFetchPlayBack(mediaList);
         presenter.doFetchOtherMediasFromDB(mediaList);
+        if (btnPlay.getVisibility() == View.GONE)
+            presenter.doFetchPlayBack(mediaList);
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnPlay.setVisibility(View.GONE);
+                presenter.doFetchPlayBack(mediaList);
+            }
+        });
     }
 
     @Override
@@ -166,7 +179,7 @@ public class DetailsActivity extends BaseActivity implements DetailsContract.Det
             hasResetPosition = true;
             player.release();
             player = null;
-            presenter.doUpdatePlayBack(currentId,currentWindow, playbackPosition );
+            presenter.doUpdatePlayBack(currentId, currentWindow, playbackPosition);
         }
     }
 
