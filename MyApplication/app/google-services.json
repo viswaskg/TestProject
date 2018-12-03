@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "692312715374",
+    "firebase_url": "https://test-8874f.firebaseio.com",
+    "project_id": "test-8874f",
+    "storage_bucket": "test-8874f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692312715374:android:8de2f42f53488d83",
+        "android_client_info": {
+          "package_name": "com.example.viswas.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692312715374-so0o4uakq2tfjktgqpeuvnat4semkpia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5sblzEcLCLlyjfhL5WC8H8CuD-5zqS9Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692312715374:android:68aca912be02e825",
+        "android_client_info": {
+          "package_name": "com.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692312715374-so0o4uakq2tfjktgqpeuvnat4semkpia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5sblzEcLCLlyjfhL5WC8H8CuD-5zqS9Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

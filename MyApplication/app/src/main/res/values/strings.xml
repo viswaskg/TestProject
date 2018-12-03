@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="login">Login</string>L
+    <string name="hint_email">Enter e-mail address</string>
+    <string name="hint_password">Enter password</string>
+    <string name="logout">Logout</string>
+    <string name="error_invalid_email">Please provide a valida email</string>
+    <string name="error_invalid_password">Please provide a valida password</string>
+    <string name="ok">OK</string>
+    <string name="username">Username</string>
+    <string name="success_login">Login successful</string>
+    <string name="error_login">Authentication Failed.</string>
+
+    <string name="error_io">There is some problem with the network. Please check your connectivity</string>
+    <string name="error_server">There is a problem with the server. Please try again later.</string>
+    <string name="error_app">There is a problem with the application. Please report it.</string>
+    <string name="error_common">Something went wrong. Please try again later.</string>
+    
+    <string name="related">Related Videos</string>
+</resources>
